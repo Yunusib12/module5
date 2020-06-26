@@ -20,7 +20,8 @@ app.use(routes);
 // Connecting to the database and starting the se server
 mongoose.connect(mongoDB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
     .then(() => app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`)))
     .catch((error) => console.error(error));

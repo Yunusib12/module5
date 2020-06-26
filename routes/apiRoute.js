@@ -1,13 +1,22 @@
 const routes = require('express').Router()
+const dbController = require('../controllers/dbController');
 
-
-
+//Add a User
 routes
-    .route('/')
-    .get((req, res) => {
+    .route('/adduser')
+    .post(dbController.addUser);
 
-        res.send("First Routes");
-    });
+// Get all User
+routes
+    .route('/user')
+    .get(dbController.getUSer);
+
+//Get all Available Products
+routes
+    .route('/product')
+    .get(dbController.getproduct);
+
+
 
 
 
