@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { Int32 } = require('mongodb');
 const Schema = mongoose.Schema;
 
 
@@ -13,12 +12,9 @@ const Product = new Schema({
         type: Number,
         required: true
     },
-    status: {
-        type: String
-    },
     dateCreated: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     }
 })
 

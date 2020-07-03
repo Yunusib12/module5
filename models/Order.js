@@ -4,14 +4,20 @@ const Schema = mongoose.Schema;
 const Order = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     productId: {
         type: Schema.Types.ObjectId,
-        ref: 'Product'
+        ref: 'Product',
+        required: true
+    },
+    amount: {
+        type: String
     },
     status: {
-        type: String
+        type: String,
+        default: "In progress..."
     },
     dateOrder: {
         type: Date,
